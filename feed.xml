@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>IACS UR E27</title>
+    <link href="https://ure27.com/feed.xml" rel="self" />
+    <link href="https://ure27.com" />
+    <updated>2025-12-29T16:35:18+08:00</updated>
+    <author>
+        <name>e27 team</name>
+    </author>
+    <id>https://ure27.com</id>
+
+    <entry>
+        <title>Document templates</title>
+        <author>
+            <name>e27 team</name>
+        </author>
+        <link href="https://ure27.com/document-templates.html"/>
+        <id>https://ure27.com/document-templates.html</id>
+
+        <updated>2025-12-29T16:34:33+08:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
+    <entry>
+        <title>UR E27 Overview</title>
+        <author>
+            <name>e27 team</name>
+        </author>
+        <link href="https://ure27.com/post-3.html"/>
+        <id>https://ure27.com/post-3.html</id>
+            <category term="tag1"/>
+
+        <updated>2025-12-29T15:58:39+08:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
+    <entry>
+        <title>Documentation requrements</title>
+        <author>
+            <name>e27 team</name>
+        </author>
+        <link href="https://ure27.com/post-2.html"/>
+        <id>https://ure27.com/post-2.html</id>
+
+        <updated>2025-12-29T15:58:34+08:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
+    <entry>
+        <title>Virtual case study</title>
+        <author>
+            <name>e27 team</name>
+        </author>
+        <link href="https://ure27.com/post-1.html"/>
+        <id>https://ure27.com/post-1.html</id>
+
+        <updated>2025-12-29T15:58:27+08:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
+</feed>

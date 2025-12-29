@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ure27.com/sitemap.xml

@@ -1,0 +1,62 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "IACS UR E27",
+    "description": "",
+    "home_page_url": "https://ure27.com",
+    "feed_url": "https://ure27.com/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "e27 team"
+    },
+    "items": [
+        {
+            "id": "https://ure27.com/document-templates.html",
+            "url": "https://ure27.com/document-templates.html",
+            "title": "Document templates",
+            "author": {
+                "name": "e27 team"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-12-29T16:34:33+08:00",
+            "date_modified": "2025-12-29T16:35:18+08:00"
+        },
+        {
+            "id": "https://ure27.com/post-3.html",
+            "url": "https://ure27.com/post-3.html",
+            "title": "UR E27 Overview",
+            "author": {
+                "name": "e27 team"
+            },
+            "tags": [
+                   "tag1"
+            ],
+            "date_published": "2025-12-29T15:58:39+08:00",
+            "date_modified": "2025-12-29T16:32:03+08:00"
+        },
+        {
+            "id": "https://ure27.com/post-2.html",
+            "url": "https://ure27.com/post-2.html",
+            "title": "Documentation requrements",
+            "author": {
+                "name": "e27 team"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-12-29T15:58:34+08:00",
+            "date_modified": "2025-12-29T16:32:40+08:00"
+        },
+        {
+            "id": "https://ure27.com/post-1.html",
+            "url": "https://ure27.com/post-1.html",
+            "title": "Virtual case study",
+            "author": {
+                "name": "e27 team"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-12-29T15:58:27+08:00",
+            "date_modified": "2025-12-29T16:33:08+08:00"
+        }
+    ]
+}
