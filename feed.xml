@@ -3,7 +3,7 @@
     <title>IACS UR E27</title>
     <link href="https://ure27.com/feed.xml" rel="self" />
     <link href="https://ure27.com" />
-    <updated>2026-01-06T18:16:51+08:00</updated>
+    <updated>2026-01-08T12:35:12+08:00</updated>
     <author>
         <name>e27 team</name>
     </author>
@@ -17,12 +17,13 @@
         <link href="https://ure27.com/e2627-2h2025-recap.html"/>
         <id>https://ure27.com/e2627-2h2025-recap.html</id>
         <media:content url="https://ure27.com/media/posts/13/Gemini_Generated_Image_kmtp8okmtp8okmtp.jpg" medium="image" />
+            <category term="posts"/>
 
         <updated>2026-01-02T10:53:21+08:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://ure27.com/media/posts/13/Gemini_Generated_Image_kmtp8okmtp8okmtp.jpg" alt="" />
-                    Global Maritime Regulatory Compliance Review: IACS UR E26 &amp; E27 Implementation Analysis&hellip;
+                    Global Maritime Regulatory Compliance Review: IACS UR E26 &amp; E27 Implementation Analysis (H2 2025) 1. Executive Summary The second half of 2025 represents a watershed moment in the maritime industry's transition toward a fully cyber-resilient operational framework. Following the mandatory entry into force of the&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -495,12 +496,13 @@
         <link href="https://ure27.com/2026-perfect-storm.html"/>
         <id>https://ure27.com/2026-perfect-storm.html</id>
         <media:content url="https://ure27.com/media/posts/12/Gemini_Generated_Image_uagp6wuagp6wuagp.png" medium="image" />
+            <category term="posts"/>
 
         <updated>2025-12-30T23:22:15+08:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://ure27.com/media/posts/12/Gemini_Generated_Image_uagp6wuagp6wuagp.png" alt="" />
-                    The 2026 Market Access Cliff: The Year "Compliance" Determines Survival for Marine&hellip;
+                    The 2026 Market Access Cliff: The Year "Compliance" Determines Survival for Marine Suppliers. On July 1, 2024, the IACS UR E26 and E27 regulations entered into force. For the past 18 months, many equipment manufacturers have treated this as a future problem—a box to check&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -569,15 +571,13 @@
         <link href="https://ure27.com/navigating-the-digital-shoals-tier-2-and-tier-3-supplier-adoption-of-iacs-ur-e27-in-the-southeast-asian-maritime-ecosystem.html"/>
         <id>https://ure27.com/navigating-the-digital-shoals-tier-2-and-tier-3-supplier-adoption-of-iacs-ur-e27-in-the-southeast-asian-maritime-ecosystem.html</id>
         <media:content url="https://ure27.com/media/posts/11/Gemini_Generated_Image_fcje9rfcje9rfcje.png" medium="image" />
-            <category term="Supplier"/>
-            <category term="SEA"/>
-            <category term="E27"/>
+            <category term="posts"/>
 
         <updated>2025-12-30T15:02:59+08:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://ure27.com/media/posts/11/Gemini_Generated_Image_fcje9rfcje9rfcje.png" alt="" />
-                    Tier 2 and Tier 3 Supplier Adoption of IACS UR E27 in&hellip;
+                    Tier 2 and Tier 3 Supplier Adoption of IACS UR E27 in the Southeast Asian Maritime Ecosystem Executive Summary: The Cyber Resilience Mandate and the Supply Chain Shock The global maritime industry stands at a precipice of a fundamental structural transformation, precipitated not by a&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -959,14 +959,13 @@
         <link href="https://ure27.com/post-3.html"/>
         <id>https://ure27.com/post-3.html</id>
         <media:content url="https://ure27.com/media/posts/8/Gemini_Generated_Image_rp75l1rp75l1rp75.png" medium="image" />
-            <category term="HowTo"/>
-            <category term="E27"/>
+            <category term="posts"/>
 
         <updated>2025-12-29T15:58:39+08:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://ure27.com/media/posts/8/Gemini_Generated_Image_rp75l1rp75l1rp75.png" alt="" />
-                    Maritime Cyber Resilience: Navigating IACS UR E26 and E27 A Strategic Guide&hellip;
+                    Maritime Cyber Resilience: Navigating IACS UR E26 and E27 A Strategic Guide for Tier 2 and Tier 3 Suppliers For decades, maritime equipment standards focused primarily on physical safety and environmental performance. However, the digitization of vessel operations has introduced a new dimension of risk.
                 ]]>
             </summary>
         <content type="html">
