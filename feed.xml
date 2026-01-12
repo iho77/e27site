@@ -3,7 +3,7 @@
     <title>IACS UR E27</title>
     <link href="https://ure27.com/feed.xml" rel="self" />
     <link href="https://ure27.com" />
-    <updated>2026-01-12T13:20:58+08:00</updated>
+    <updated>2026-01-12T13:22:41+08:00</updated>
     <author>
         <name>e27 team</name>
     </author>
@@ -17,6 +17,7 @@
         <link href="https://ure27.com/from-black-box-to-glass-box-hardening-the-maritime-sdlc-for-ur-e27-compliance.html"/>
         <id>https://ure27.com/from-black-box-to-glass-box-hardening-the-maritime-sdlc-for-ur-e27-compliance.html</id>
         <media:content url="https://ure27.com/media/posts/17/Gemini_Generated_Image_b7968xb7968xb796.jpeg" medium="image" />
+            <category term="posts"/>
 
         <updated>2026-01-12T13:20:58+08:00</updated>
             <summary type="html">
