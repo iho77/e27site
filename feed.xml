@@ -3,12 +3,443 @@
     <title>IACS UR E27</title>
     <link href="https://ure27.com/feed.xml" rel="self" />
     <link href="https://ure27.com" />
-    <updated>2026-01-08T14:33:04+08:00</updated>
+    <updated>2026-01-12T13:20:58+08:00</updated>
     <author>
         <name>e27 team</name>
     </author>
     <id>https://ure27.com</id>
 
+    <entry>
+        <title>From Black Box to Glass Box: Hardening the Maritime SDLC for UR E27 Compliance</title>
+        <author>
+            <name>e27 team</name>
+        </author>
+        <link href="https://ure27.com/from-black-box-to-glass-box-hardening-the-maritime-sdlc-for-ur-e27-compliance.html"/>
+        <id>https://ure27.com/from-black-box-to-glass-box-hardening-the-maritime-sdlc-for-ur-e27-compliance.html</id>
+        <media:content url="https://ure27.com/media/posts/17/Gemini_Generated_Image_b7968xb7968xb796.jpeg" medium="image" />
+
+        <updated>2026-01-12T13:20:58+08:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://ure27.com/media/posts/17/Gemini_Generated_Image_b7968xb7968xb796.jpeg" alt="" />
+                    For decades, the maritime supply chain operated on a “Black Box” philosophy regarding equipment certification. As a manufacturer, you built a navigation sensor, a ballast pump controller, or an engine management system. You subjected it to environmental testing—vibration, temperature, humidity, and electromagnetic compatibility (EMC). You&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://ure27.com/media/posts/17/Gemini_Generated_Image_b7968xb7968xb796.jpeg" class="type:primaryImage" alt="" /></p>
+                <p> </p>
+<h2>1. The Era of the “Black Box” is Over</h2>
+<p>For decades, the maritime supply chain operated on a “Black Box” philosophy regarding equipment certification. As a manufacturer, you built a navigation sensor, a ballast pump controller, or an engine management system. You subjected it to environmental testing—vibration, temperature, humidity, and electromagnetic compatibility (EMC). You handed the physical unit to a Class surveyor, demonstrated that it functioned under stress, and received your Type Approval. How the software inside was written, or how the libraries were selected, was largely your own business, provided the output was correct.</p>
+<p>With the implementation of <strong>IACS Unified Requirement (UR) E27 Rev.1 (Sep 2023)</strong> for newbuilds <strong>contracted for construction on/after 1 July 2024</strong>, that era has ended in practice.</p>
+<p>The maritime industry has recognized that a device functioning correctly <em>now</em> is not the same as a device that is <em>secure</em> against tomorrow’s threats. UR E27 introduces a structured expectation: suppliers must be able to <strong>demonstrate cyber resilience capabilities and lifecycle controls</strong>, with required documents <strong>available and provided for approval or upon request</strong>, depending on scope and Society processes.</p>
+<p>A key compliance lever is <strong>UR E27 Rev.1 §3.1.6</strong> (<em>Secure development lifecycle documents</em> — typically <strong>submitted upon request</strong>) and the lifecycle requirements set in <strong>UR E27 §5</strong> (<em>Secure development lifecycle requirements</em>).</p>
+<p>This is a fundamental shift from pure product validation (testing the object) to <strong>process and evidence validation</strong> (auditing how security is engineered, verified, delivered, and maintained). The Class Society is no longer just asking, “Does this pump work?” We are asking, “Can you show security was treated as an engineering input across the lifecycle, and can you support it with records?”</p>
+<p>This article is a consultative guide to updating internal “Design and Development” procedures. We will show how to transition from “security as a late test activity” to a lifecycle approach that is <strong>audit-ready</strong>, and how to leverage the structure of <strong>IEC 62443-4-1</strong> as a proven framework—while being clear that <strong>UR E27 references and expects evidence for selected lifecycle outcomes</strong>, not necessarily a full IEC 62443-4-1 certification program.</p>
+<p>We will deep-dive into three common stumbling blocks for manufacturers: <strong>Threat Modeling</strong>, <strong>Supply Chain Risk Management (SCRM)</strong>, and <strong>Defect/Vulnerability Management</strong>.</p>
+<hr>
+<h2>2. The Foundation: Hardening Your Lifecycle (Not Just the V-Model)</h2>
+<p>Many Quality Management Systems (QMS) use a V-Model; others use waterfall, agile, or hybrids. UR E27 does not mandate a specific development model. What it does require is that you can show security is <strong>handled and evidenced</strong> across the lifecycle:</p>
+<ul>
+<li>
+<p>requirements and design inputs</p>
+</li>
+<li>
+<p>implementation controls</p>
+</li>
+<li>
+<p>verification of security capabilities (test procedures and records)</p>
+</li>
+<li>
+<p>secure delivery and updates</p>
+</li>
+<li>
+<p>hardening and operating guidance</p>
+</li>
+<li>
+<p>ongoing handling of security issues and dependencies</p>
+</li>
+</ul>
+<p>To comply with UR E27, you must stop treating security as something you “test in” at the end. You must introduce <strong>defined security activities and deliverables</strong> as part of your normal engineering exit criteria.</p>
+<h3>The New Architecture of Your Procedure</h3>
+<p>In your updated procedure documentation, each phase must have a corresponding <strong>security output</strong> (deliverable) and <strong>exit criteria</strong> (what “good enough to proceed” means).</p>
+<ol>
+<li>
+<p><strong>Concept / Feasibility → Exit Criteria:</strong> High-level cyber risk and environment assumptions</p>
+<ul>
+<li>
+<p>What networks will this device touch? What trust boundaries exist? Who maintains it onboard?</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Requirements → Exit Criteria:</strong> Cybersecurity Requirements Specification (CRS)</p>
+<ul>
+<li>
+<p>Functional requirements (e.g., “measure pressure”) paired with security requirements (e.g., “authenticated configuration changes,” “default-secure settings,” “logging,” “update authenticity verification”).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Architecture / Design → Exit Criteria:</strong> Security design decisions + threat model (recommended)</p>
+<ul>
+<li>
+<p>Trust boundaries, secure boot/update approach, account model, service interfaces, hardening defaults, and compensating controls where protocols can’t be secured.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Implementation → Exit Criteria:</strong> Secure coding controls + build integrity controls</p>
+<ul>
+<li>
+<p>Coding standards, code review rules, static analysis, secrets handling, dependency pinning, reproducible builds where feasible.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verification &amp; Validation → Exit Criteria:</strong> Security capability verification evidence</p>
+<ul>
+<li>
+<p>A repeatable test procedure and results. This can include negative testing, vulnerability scanning, targeted fuzzing, and penetration testing where appropriate—but the key is <strong>documented, repeatable verification</strong> aligned to your claimed capabilities.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Release / Delivery → Exit Criteria:</strong> Secure update and delivery readiness</p>
+<ul>
+<li>
+<p>Evidence of update authenticity controls (signing, verification) and protection of the signing keys; release notes; SBOM; customer-facing security configuration/hardening guidance.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Maintenance → Exit Criteria:</strong> Vulnerability intake + dependency monitoring + patch communication</p>
+<ul>
+<li>
+<p>A defined process for monitoring, triage, impact analysis, and update delivery.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>This sounds rigid, but it’s exactly what makes your SDLC “defensible” during plan approval and supplier audits.</p>
+<blockquote>
+<p>Practical note: UR E27 does <strong>not</strong> require a certified lab or “qualified external tester” to carry out security capability testing. What it does require is that your testing is <strong>credible, repeatable, and evidenced</strong>.</p>
+</blockquote>
+<hr>
+<h2>3. Deep Dive: Threat Modeling as a Design Output (Practical, Not Theoretical)</h2>
+<p><em>(Aligned with IEC 62443-4-1 “Secure by Design” practice concepts)</em></p>
+<p>The most frequent gap we identify during supplier audits is not “lack of security features.” It is lack of <strong>engineering justification</strong>: why those features exist, what threats they address, and what assumptions are made about the operating environment.</p>
+<h3>The “So What?” Factor: Addressing Engineering Skepticism</h3>
+<p>When we ask for threat modeling for a seemingly benign device—say, a ballast pump controller or a level sensor—the common pushback is:<br><em>“Who would hack a ballast pump? There is no financial data there.”</em></p>
+<p>That is not how modern OT compromise works. Attackers rarely target a ballast pump because they “want the pump.” They target it because it is <strong>a networked computer</strong>, sometimes with weak maintenance interfaces, outdated components, or default credentials.</p>
+<p><strong>The Risk is Lateral Movement and System Impact.</strong><br>A compromised controller can become a foothold (pivot point) on the vessel’s OT network. From there, an attacker can scan for higher-impact systems (automation servers, HMIs, network infrastructure, engineering workstations), disrupt operations, or manipulate process data. Your device’s job is not only to function—it must not become the weakest link.</p>
+<h3>Execution: Use a Method, Don’t Wing It</h3>
+<p>UR E27 does not prescribe STRIDE (or any single method). However, your procedure should mandate <em>a consistent methodology</em>. <strong>STRIDE</strong> is a practical choice for embedded vendors because it is structured and teachable.</p>
+<p>Let us walk through a STRIDE-style analysis for a typical maritime component: a <strong>Smart Pressure Sensor</strong> connected via <strong>Modbus TCP</strong>.</p>
+<h4><strong>S — Spoofing (Identity / Endpoint Impersonation)</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> An attacker impersonates a controller and sends configuration changes; or spoofs sensor readings upstream.</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> Where feasible, implement <strong>strong authentication</strong> for configuration changes (service tools, maintenance sessions). If Modbus TCP cannot be authenticated at protocol level, enforce authentication at the <strong>management interface</strong> (service port, web UI, engineering tool) and document required network controls.</p>
+</li>
+</ul>
+<h4><strong>T — Tampering (Data Modification)</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> Sensor values or setpoints are modified in transit, causing unsafe control actions.</p>
+</li>
+<li>
+<p><strong>Reality check:</strong> Modbus TCP has no built-in integrity/authentication. “Just add HMAC” is often not interoperable.</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> Provide integrity/authentication via <strong>standardized secure transport</strong> (e.g., TLS/VPN/gateway) or specify <strong>compensating controls</strong> (segmentation, ACLs, whitelisting, conduits) as part of the expected environment. Your design documentation must clearly state which path you support and what the ship/system integrator must provide.</p>
+</li>
+</ul>
+<h4><strong>R — Repudiation (Denial of Action)</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> A technician changes calibration or thresholds and later denies it.</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> <strong>Secure logging</strong> of configuration changes with timestamp, user identity (or service tool identity), and event integrity protections appropriate to the platform.</p>
+</li>
+</ul>
+<h4><strong>I — Information Disclosure (Data / Secrets Leakage)</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> Debug services, default credentials, memory dumps, or sensitive configuration exposed (Telnet, debug UART, verbose logs).</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> Disable debug services in production; harden defaults; encrypt or protect secrets; remove developer backdoors; document service access procedures.</p>
+</li>
+</ul>
+<h4><strong>D — Denial of Service (DoS)</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> Flooding network connections starves CPU and stops reporting.</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> Rate limiting, connection caps, watchdogs, and prioritization so the sensor loop remains stable under network stress. Document limits and expected network hygiene.</p>
+</li>
+</ul>
+<h4><strong>E — Elevation of Privilege</strong></h4>
+<ul>
+<li>
+<p><strong>Threat:</strong> A low-privilege function is exploited to gain admin/root level execution.</p>
+</li>
+<li>
+<p><strong>Design Fix:</strong> Least privilege for network-facing processes, safe memory handling, secure coding rules, and hardening of maintenance tools.</p>
+</li>
+</ul>
+<p><strong>Implementation in Procedures:</strong><br>Your “Design Phase” procedure should require a <strong>Security Design Record</strong> (or Threat Modeling Report) that:</p>
+<ul>
+<li>
+<p>lists threats in a consistent structure</p>
+</li>
+<li>
+<p>links each to a mitigation (design decision, control, or compensating requirement)</p>
+</li>
+<li>
+<p>records assumptions about the operating environment (segmentation, access controls, service workflow)</p>
+</li>
+<li>
+<p>produces traceable security requirements for implementation and test</p>
+</li>
+</ul>
+<p>This is what makes your security posture auditable instead of “hand-wavy.”</p>
+<blockquote>
+<p>Practical tip: when security depends on environment controls (segmentation, jump hosts, firewall rules), state this explicitly. UR E27 expects clarity on <strong>defence-in-depth measures expected in the environment</strong>, not only product internals.</p>
+</blockquote>
+<hr>
+<h2>4. Deep Dive: Supply Chain Risk Management (SCRM) &amp; Dependency Tracking (SBOM Done Right)</h2>
+<p><em>(Aligned with IEC 62443-4-1 “Management of Security-Related Issues” concepts; strongly supports UR E27 lifecycle expectations)</em></p>
+<p>When we discuss “inventory,” manufacturers often think “shipowner asset inventory.” That is not the point here. The audit focus is on <strong>your internal inventory of software components</strong>—especially third-party and open-source dependencies.</p>
+<h3>The “Left-Pad” Problem in Maritime Firmware</h3>
+<p>Modern firmware is rarely written from scratch. Common components include:</p>
+<ul>
+<li>
+<p><strong>TCP/IP stacks</strong> (e.g., lwIP)</p>
+</li>
+<li>
+<p><strong>crypto libraries</strong> (OpenSSL, mbedTLS)</p>
+</li>
+<li>
+<p><strong>embedded web servers</strong> (admin UI)</p>
+</li>
+<li>
+<p><strong>parsers/serializers</strong> (XML/JSON/protocol parsing)</p>
+</li>
+</ul>
+<p>If a vulnerability is found in a dependency version you ship, your product may inherit that vulnerability.</p>
+<h3>The Logic of an SBOM (and What Auditors Actually Need)</h3>
+<p>To be audit-ready, your procedure should mandate the creation of a <strong>Software Bill of Materials (SBOM)</strong> per firmware build/release.</p>
+<p>Think of an SBOM like an ingredients list:</p>
+<ol>
+<li>
+<p>Component name</p>
+</li>
+<li>
+<p>Version</p>
+</li>
+<li>
+<p>License</p>
+</li>
+<li>
+<p>Source / origin</p>
+</li>
+<li>
+<p>Build inclusion (statically linked? optional module? only in dev builds?)</p>
+</li>
+</ol>
+<p>But an SBOM alone is not enough. Auditors (and customers) will immediately ask:</p>
+<ul>
+<li>
+<p>Which product lines and firmware versions include the vulnerable component?</p>
+</li>
+<li>
+<p>Which customers/shipsets received those versions (fleet mapping)?</p>
+</li>
+<li>
+<p>What is your decision and action plan?</p>
+</li>
+</ul>
+<p>So your procedure must also maintain <strong>release traceability</strong> (product → firmware version → shipped units/customers).</p>
+<h3>The Audit Trap: Spreadsheets vs. Repeatable Traceability</h3>
+<p>The failure pattern looks like this:</p>
+<ul>
+<li>
+<p><strong>Auditor:</strong> “A critical vulnerability was announced in a library last week. Do you use it?”</p>
+</li>
+<li>
+<p><strong>Manufacturer:</strong> “Let me check…” (spreadsheets, phone calls, hours of uncertainty)</p>
+</li>
+</ul>
+<p>That response is a <strong>process failure</strong>, not a tooling failure.</p>
+<p>You do not necessarily need a full CMDB. You <em>do</em> need:</p>
+<ul>
+<li>
+<p>SBOM generation integrated into build/release</p>
+</li>
+<li>
+<p>a single source of truth for “what ships with what”</p>
+</li>
+<li>
+<p>the ability to perform impact analysis quickly and consistently</p>
+</li>
+</ul>
+<p>This can be achieved with an SCA tool, SBOM tooling (SPDX/CycloneDX), and disciplined release management.</p>
+<h3>Process Requirement: Continuous Vulnerability Monitoring + Impact Analysis</h3>
+<p>Documentation is dead if it is not updated. Your procedure must define a process for continuous monitoring:</p>
+<ol>
+<li>
+<p><strong>Monitoring trigger:</strong> automated alerts or scheduled review cadence (define it)</p>
+</li>
+<li>
+<p><strong>Triage &amp; severity:</strong> internal severity method (CVSS is common; document how you use it)</p>
+</li>
+<li>
+<p><strong>Impact analysis record:</strong> affected/not affected with technical justification</p>
+</li>
+<li>
+<p><strong>Decision &amp; actions:</strong> patch, mitigation guidance, compensating controls, or “no action” (with evidence)</p>
+</li>
+</ol>
+<p>Example (audit-friendly wording):</p>
+<ul>
+<li>
+<p><strong>Finding:</strong> Vulnerability in crypto library version X</p>
+</li>
+<li>
+<p><strong>Assessment:</strong> We use the library, but the vulnerable feature is not enabled/compiled; evidence attached (build flags/config)</p>
+</li>
+<li>
+<p><strong>Decision:</strong> No product update required; advisory issued to customers if needed</p>
+</li>
+</ul>
+<p>The key is the <strong>paper trail</strong>. Without it, you cannot prove you manage dependency risk.</p>
+<hr>
+<h2>5. Deep Dive: Defect Management &amp; Vulnerability Disclosure (PSIRT Reality)</h2>
+<p><em>(Aligned with IEC 62443-4-1 “Security Update Management” concepts; supports UR E27 lifecycle expectations)</em></p>
+<p>The final pillar is what happens <strong>after the product leaves the factory</strong>. A mature approach must cover receiving, analyzing, and resolving security defects, and delivering updates securely.</p>
+<h3>The “Bug” vs. “Vulnerability” Distinction</h3>
+<p>Most manufacturers have a bug tracker (Jira, Bugzilla). A common mistake is to treat security vulnerabilities exactly like functional bugs.</p>
+<p>Security defects require different handling for three reasons:</p>
+<ol>
+<li>
+<p><strong>Confidentiality:</strong> Security flaws may need restricted handling until a fix is ready.</p>
+</li>
+<li>
+<p><strong>Urgency:</strong> Critical security issues may require out-of-cycle fixes.</p>
+</li>
+<li>
+<p><strong>Coordination:</strong> You may need to coordinate with customers, integrators, or third parties before public disclosure.</p>
+</li>
+</ol>
+<p>Your procedure must define a separate workflow (or “security flag”) with restricted access, defined triage steps, and controlled communications.</p>
+<h3>The Public Interface: If You Don’t Offer One, You Won’t Get Reports (Or You’ll Get Them Too Late)</h3>
+<p>A security researcher or customer needs a clear channel to report issues.</p>
+<p>Minimum expectations for an audit-ready posture:</p>
+<ol>
+<li>
+<p><strong>Email alias:</strong> <code>security@yourdomain.com</code> or <code>psirt@yourdomain.com</code></p>
+</li>
+<li>
+<p><strong>Published process:</strong> a <code>/security</code> or <code>/vulnerability-disclosure</code> page describing how to report and what to expect</p>
+</li>
+<li>
+<p><strong>Optional but recommended:</strong> PGP key or secure reporting mechanism</p>
+</li>
+</ol>
+<h3>Service Levels (SLAs) — You Must Define Timelines, Even If They’re “Internal Targets”</h3>
+<p>Your “Defect/Vulnerability Management” procedure must define response targets. The numbers below are examples, but you must have <em>your own defined values</em>:</p>
+<ul>
+<li>
+<p><strong>Acknowledgement:</strong> within 72 hours</p>
+</li>
+<li>
+<p><strong>Initial assessment:</strong> within 5 business days</p>
+</li>
+<li>
+<p><strong>Remediation target:</strong></p>
+<ul>
+<li>
+<p>Critical: patch/advisory within 30 days (or documented mitigation plan)</p>
+</li>
+<li>
+<p>High: within 60 days</p>
+</li>
+<li>
+<p>Medium/Low: next scheduled maintenance release</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>What Class and customers will look for is not “perfect speed.” It is <strong>predictability</strong>, <strong>control</strong>, and <strong>evidence</strong> of execution.</p>
+<hr>
+<h2>6. Conclusion: The Business Case for Compliance (and Why This Isn’t Just Paperwork)</h2>
+<p>Updating your “Design and Development” procedures to meet UR E27 expectations is not a small change. It requires stronger documentation discipline, clearer design records, better release traceability, and lifecycle security controls.</p>
+<p>However, beyond UR E27 compliance, the business value is real:</p>
+<ol>
+<li>
+<p><strong>Reduced liability and clearer responsibility boundaries:</strong> Evidence of design decisions, hardening defaults, and update controls demonstrates due diligence.</p>
+</li>
+<li>
+<p><strong>Market differentiation:</strong> SBOM readiness, credible vulnerability handling, and secure update mechanisms increasingly influence vendor selection.</p>
+</li>
+<li>
+<p><strong>Lower field cost:</strong> Better verification and dependency control reduce painful incidents and emergency service events.</p>
+</li>
+</ol>
+<p><strong>Next Steps for Your Team:</strong></p>
+<ol>
+<li>
+<p><strong>Gap analysis:</strong> Map your current SOP to lifecycle security outcomes (and optionally the 8 IEC 62443-4-1 practice areas as a structured checklist).</p>
+</li>
+<li>
+<p><strong>Tooling:</strong> Implement SBOM generation + release traceability + vulnerability monitoring (SCA/SBOM tooling).</p>
+</li>
+<li>
+<p><strong>Training:</strong> Run a practical threat modeling workshop (STRIDE or equivalent) focused on your actual product interfaces and service workflows.</p>
+</li>
+<li>
+<p><strong>Procedure rewrite:</strong> Add security deliverables and exit criteria to each phase; explicitly cover update authenticity and key protection, hardening defaults, and environment defence-in-depth expectations.</p>
+</li>
+</ol>
+<p>The Class Society will assess evidence against the rule intent and approval scope. The more your procedure reads like engineering reality—with traceable records—the smoother your approval cycle will be.</p>
+<hr>
+<h3>Appendix A: Checklist for Updated Procedure Headers (Audit-Ready)</h3>
+<p><em>Ensure your updated procedure document contains sections covering the following (use as internal headings):</em></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Security Management (SM):</strong> roles/responsibilities; security ownership; approvals</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Specification of Security Requirements (SR):</strong> how CRS is derived and traced</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Secure Design (SD):</strong> interface inventory; trust boundaries; threat modeling method (recommended); design decisions; compensating controls and environmental assumptions</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Secure Implementation (SI):</strong> coding standards; reviews; static analysis; secrets handling</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Security Verification &amp; Validation (SV):</strong> repeatable security capability verification; negative testing; vulnerability scanning; evidence retention</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Management of Security-Related Issues (DM):</strong> SBOM; dependency pinning; monitoring triggers; impact analysis workflow</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Security Update Management (SUM):</strong> secure update delivery; authenticity verification; protection of signing keys; customer communications</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled="disabled"> <strong>Security Guidelines (SG):</strong> <strong>security configuration guidelines</strong> including default values and recommended hardening settings; operational constraints and expected environment controls</p>
+</li>
+</ul>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>What is CBS Asset Inventory</title>
         <author>
